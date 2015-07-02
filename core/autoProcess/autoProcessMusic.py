@@ -106,7 +106,7 @@ class autoProcessMusic:
             logger.debug("Opening URL: %s with PARAMS: %s" % (url, params), section)
 
             try:
-                r = requests.get(url, params=params, verify=False, timeout=(30, 300))
+                r = requests.get(url, params=params, verify=False, timeout=(30, 600))
             except requests.ConnectionError:
                 logger.error("Unable to open URL %s" % (url) ,section)
                 return [1, "%s: Failed to post-process - Unable to connect to %s" % (section, section) ]
